@@ -6,7 +6,13 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 2rem 0;
+    .cardContainer{
+         display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 
+    }
+   
     article{
         background-color: var(--white);
         border-radius: 10px;
