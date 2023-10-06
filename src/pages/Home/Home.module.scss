@@ -1,16 +1,35 @@
 @import url(../../GlobalStyle.scss);
 
 .home{
-    
+    width: 1000px;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     padding: 2rem 0;
-    h2{
-        text-align: center;
-        font-family: var(--paragraph);
-        font-weight: 500;
-    }
-    p{
-        margin: 1em 0;
-        font-family: var(--paragraph);
-        font-weight: 300;
+
+    article{
+        background-color: var(--white);
+        border-radius: 10px;
+        h2{
+            text-align: center;
+            font-family: var(--paragraph);
+            font-weight: 500;
+        }
+        p{
+            margin: 1em 0;
+            font-family: var(--paragraph);
+            font-weight: 300;
+        }
+        figure{
+            background-image: url(../../assets/imgBG.png);
+            background-size:cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+            }
+        }
     }
 }

@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 import { allBlogs } from "../../queries/allBlogs";
 import style from "./AllBlogs.module.scss";
 
-// import DOMPurify from 'dompurify';
-{/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.text.html) }}></div> */ }
 
+//fetcher data
 export const AllBlogs = () => {
     const allBlogsEntries = useQuery({
         queryKey: ['getAllBlogs'],
@@ -15,14 +14,17 @@ export const AllBlogs = () => {
             allBlogs)
     })
 
+    //gemmer data efter det er sorteret
     const [sortedPost, setSortedPost] = useState();
 
+    //updatere  og sorteret sortedPost
     useEffect(() => {
         if (allBlogsEntries.isSuccess) {
             setSortedPost([...allBlogsEntries.data.blogPosts]);
         }
     }, [allBlogsEntries.isSuccess]);
 
+    //function til dropdown med to if statments som checker valuen fra select og sortere enten efter dato eller alfabetisk orden
     function dropDown(option) {
         if (option == "1") {
             const dates = [...allBlogsEntries.data.blogPosts];
@@ -38,8 +40,10 @@ export const AllBlogs = () => {
         }
     }
 
+    //loadingscreen
     if (allBlogsEntries.isLoading) return (<p>Loading...</p>)
 
+    //retunere en dropdown og alle blogposts. Navlink skal linke til en details-side senere.
     return (
         <section className={style.allblogsStyle}>
             <h2>Artikler</h2>

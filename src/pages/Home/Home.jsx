@@ -5,14 +5,16 @@ import { allBlogs } from "../../queries/allBlogs"
 import style from "./Home.module.scss"
 
 export const Home = () => {
+    //fetcher data(blogposts)
     const twoNewestPosts = useQuery({
         queryKey: ['getTwoBlogs'],
         queryFn: async () => request(`https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clnbdeq138a3801uk3zh7fmbl/master`,
             allBlogs)
     })
-
+    //gemmer data efter det er sorteret
     const [sortedPost, setSortedPost] = useState([]);
 
+    //updatere  og sorteret sortedPost
     useEffect(() => {
         if (twoNewestPosts.isSuccess) {
             const sortedPosts = [...twoNewestPosts.data.blogPosts];
@@ -22,11 +24,13 @@ export const Home = () => {
     }, [twoNewestPosts.isSuccess]);
 
 
-    console.log("sortedPost", sortedPost);
+    // console.log("sortedPost", sortedPost);
 
 
     if (twoNewestPosts.isLoading) return (<p>Loading...</p>)
 
+    //retunere Homepage med en artikel og to nyeste cards(blogposts)
+    //Dataen bliver opdelt lige før map, så der kun vises to blogposts
     return (
         <section className={style.home}>
             <article>
@@ -41,7 +45,7 @@ export const Home = () => {
                             <img src={item.image.url} alt={item.title} />
                         </figure>
                         <div className={style.text}>
-                            <p className={style.link} to="/">{item.title}</p>
+                            <h2 to="/">{item.title}</h2>
                             <p style={{ fontSize: "12px", marginBottom: "1em" }}>{item.date}</p>
                             <p>{item.summary}</p>
                         </div>
