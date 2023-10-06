@@ -1,0 +1,13 @@
+@import url(../../GlobalStyle.scss);
+
+.header{
+    background-image: url(../../assets/hero.png);
+    background-size: cover;
+    height: 90vh;
+    h1{
+        padding-top: 34%;
+        font-family: var(--headline);
+        font-size: 80px;
+        text-align: center;
+    }
+}

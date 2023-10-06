@@ -1,0 +1,38 @@
+@import url(../../GlobalStyle.scss);
+
+.footer{
+    padding-top: 2rem;
+    background-color: var(--bg);
+    div{
+        max-width: 1000px;
+        margin: auto;
+        padding-bottom: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        p{
+        font-family: var(--paragraph);
+        color: var(--black);
+        text-align: start;
+        a{
+            color: var(--black);
+        }
+        a:hover{
+            color: var(--callToAction);
+        }
+        }
+    }
+        figure{
+            max-width: 400px;
+            margin: auto;
+            padding-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            svg{
+                font-size: 30px;
+            }
+            svg:hover{
+                color: var(--callToAction);
+            }
+    }
+} 

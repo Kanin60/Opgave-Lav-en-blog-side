@@ -1,0 +1,16 @@
+@import url(../../GlobalStyle.scss);
+
+.home{
+    
+    padding: 2rem 0;
+    h2{
+        text-align: center;
+        font-family: var(--paragraph);
+        font-weight: 500;
+    }
+    p{
+        margin: 1em 0;
+        font-family: var(--paragraph);
+        font-weight: 300;
+    }
+}

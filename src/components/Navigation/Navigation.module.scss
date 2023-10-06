@@ -1,0 +1,21 @@
+@import url(../../GlobalStyle.scss);
+
+.navigation{
+    background-color: var(--bg);
+    padding: 10px 0;
+    ul{
+        max-width: 300px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        a{
+            text-decoration: none;
+            color: var(--black);
+            margin-right: 4em;
+            font-family: var(--paragraph);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--black);
+        }
+    }
+}
